@@ -1,0 +1,58 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-image: linear-gradient(to bottom right, #FF512F, #DD2476); /* Updated vibrant body background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrollbars if content slightly overflows */
+}
+/* Custom styles for responsiveness and better appearance */
+.weather-card {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Lighter, more appealing gradient */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Softer, larger shadow */
+    border-radius: 20px; /* More rounded corners */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    animation: fadeIn 1s ease-out forwards; /* Fade in animation for the card */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Animation for weather display content */
+.weather-info-fade-in {
+    animation: weatherFadeIn 0.8s ease-out forwards;
+}
+
+@keyframes weatherFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style for the weather icon */
+.weather-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    fill: #fff; /* White fill for the SVG icon */
+}
